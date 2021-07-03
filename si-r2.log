@@ -1,0 +1,29 @@
+wan 1 description 004Z
+wan 1 use on
+wan 1 bind usb 1
+wan 1 line modemmodule
+lan 1 ip address 192.168.1.10/24 3
+lan 1 ip dhcp service server
+lan 1 ip dhcp info dns 192.168.1.1
+lan 1 ip dhcp info address 192.168.1.2/24 32
+lan 1 ip dhcp info gateway 192.168.1.1
+lan 1 vlan 2
+lan 2 ip address 10.0.0.1/24 3
+lan 2 vlan3
+remote 0 name softbank
+remote 0 ap 0 name 004Z
+remote 0 ap 0 datalink bind wan 1
+remote 0 ap 0 ppp auth send biz@bizflat.softbank biz
+remote 0 ap 0 dial 0 number *99#
+remote 0 ap 0 idle 1m
+remote 0 ppp ipcp vjcomp disable
+remote 0 ip route 0 default 1 1
+remote 0 ip nat mode multi any 1 10m
+syslog facility 23
+time zone 0900
+proxydns domain 0 any * any to 0
+proxydns address 0 any to 0
+resource system vlan 4084-4094
+consoleinfo autologout 8h
+telnetinfo autologout 5m
+terminal charset SJIS

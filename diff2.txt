@@ -1,0 +1,11 @@
+- ether 1 1 flowctl off off
+- ether 1 1 vlan untag 1
+- ether 1 2 use off
+- ether 2 1-8 flowctl off off
+- ether 2 1-8 vlan untag 2
+- lan 1 ip address 192.168.1.1/24 3
++ lan 1 ip address 192.168.1.10/24 3
++ lan 2 ip address 10.0.0.1/24 3
++ lan 2 vlan3
+- remote 0 ip nat mode multi any 1 5m
++ remote 0 ip nat mode multi any 1 10m
