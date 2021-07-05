@@ -69,8 +69,8 @@ while True:
     #事後コンフィグに削除がある場合
     elif line[0] == "-":
       #関数呼び出し
-      cmd.comand(line)
-      f5.write("delete "+line[2:])
+      line = cmd.comand(line)
+      f5.write("delete "+line[2:]+"\n")
 
   else:
     f5.write("\ncommit\n")  
