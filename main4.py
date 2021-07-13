@@ -59,6 +59,10 @@ f4.close()
 f4 = open('diff2.txt','r',encoding="utf_8")
 f5 = open('Input_config.txt','w',encoding="utf_8",newline='\n')
 
+f5.write("########################################\n")
+f5.write("#ルーティング、remoteの削除は対応していません #\n")
+f5.write("########################################\n\n")
+
 f5.write("conf\n\n")
 while True:
   line = f4.readline()
